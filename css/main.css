@@ -8,6 +8,7 @@ html {
     background-size: cover;
     font-family: 'Noto Sans JP', sans-serif;
     overflow-y: scroll;
+    height: 100vh;
 }
 body {
     margin: 0;
