@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馮 卓然 | GitHub Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/materialize.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav class="transparent">
+            <div class="nav-wrapper">
+                <a href="#!" data-target="sidenav" class="sidenav-trigger show-on-large"><span class="material-icons">menu</span></a>
+                <a href="#!" class="brand-logo center">馮卓然</a>
+                <ul class="right hide-on-med-and-down">
+                <li><a class="nav-link" target-tab="tab1" target-div="myIntro">私について</a></li>
+                <li><a class="nav-link" target-tab="tab1" target-div="myEx">経歴</a></li>
+                <li><a class="nav-link" target-tab="tab2" target-div="mySkill1">スキル</a></li>
+                <li><a class="nav-link">連絡方法</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="sidenav">
+        <li><div class="user-view">
+            <div class="background lime lighten-2">
+                <img src="img/user_banner.jpg">
+            </div>
+            <a href="#name"><span class="white-text name">馮 卓然</span></a>
+            <a href="#email"><span class="white-text email">fung.cheukyin@m.alh.inc</span></a>
+        </div></li>
+        <li><a class="nav-link" target-tab="tab1" target-div="myIntro">私について</a></li>
+        <li><a class="nav-link" target-tab="tab1" target-div="myEx">経歴</a></li>
+        <li><a class="nav-link" target-tab="tab2" target-div="mySkill1">スキル</a></li>
+        <li><a class="nav-link">連絡方法</a></li>
+    </ul>
+
+    <ul class="tabs tabs-transparent center" id="tabs">
+        <li class="tab"><a class="active" href="#tab1">自己紹介</a></li>
+        <li class="tab"><a href="#tab2">スキル</a></li>
+    </ul>
+    <div class="container">
+        <div class="row" id="tab1">
+            <div class="col l6 s12 offset-l3">
+                <div class="dashboard-container" id="myIntro">
+                    <div class="icon-div amber darken-1">
+                        <span class="material-icons">person</span>
+                    </div>
+                    <div class="title-div">
+                        私について
+                    </div>
+                    <div class="content-div">
+                        <span>所属：ALH株式会社</span>
+                        <br>
+                        <span>出身：香港</span>
+                        <br>
+                        <span>年齢：24</span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="dashboard-container" id="myEx">
+                    <div class="icon-div amber darken-1">
+                        <span class="material-icons">person</span>
+                    </div>
+                    <div class="title-div">
+                        経歴
+                    </div>
+                    <div class="content-div">
+                        <span></span>
+                        <br>
+                        <span></span>
+                        <br>
+                        <span></span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row" id="tab2">
+            <div class="col l6 s12 offset-l3">
+                <div class="dashboard-container" id="mySkill1">
+                    <div class="icon-div pink darken-1">
+                        <span class="material-icons">person</span>
+                    </div>
+                    <div class="title-div">
+                        HTML
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="bottom-right-fab main btn-floating btn-large waves-effect waves-light lime lighten-3">
+        <i class="grey-text material-icons">error_outline</i>
+    </a>
+    <a class="bottom-right-fab sub btn-floating btn-large waves-effect waves-light teal lighten-3">
+        <i class="grey-text material-icons">error_outline</i>
+    </a>
+    <a class="bottom-right-fab sub btn-floating btn-large waves-effect waves-light orange lighten-3">
+        <i class="grey-text material-icons">error_outline</i>
+    </a>
+    <a class="bottom-right-fab sub btn-floating btn-large waves-effect waves-light green lighten-3">
+        <i class="grey-text material-icons">error_outline</i>
+    </a>
+</body>
+<script src="./js/materialize.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        $('.tabs').tabs();
+        $('.modal').modal();
+        $('.sidenav').sidenav();
+
+        $(function(){
+            var currentTheme = 'lime';
+            $('.theme-trigger').click(function(){
+                newTheme = $(this).html();
+                $('.'+currentTheme).removeClass(currentTheme).addClass(newTheme);
+                currentTheme = newTheme
+            })
+        })
+
+        $(function(){
+            $('.nav-link').click(function(){
+                var targettab = $(this).attr('target-tab');
+                var targetdiv = $(this).attr('target-div')
+                var tabs = document.getElementById('tabs');
+                var instance = M.Tabs.getInstance(tabs);
+                instance.select(targettab);
+                
+                $('html,body').animate({
+                    scrollTop: $('#'+targetdiv).offset().top - 132
+                }, 1000);
+            })
+        })
+
+        $(function(){
+            $('.bottom-right-fab.main').click(function(){
+                $(this).toggleClass('pulse');
+                $('.bottom-right-fab.sub').each(function(index){
+                    $(this).toggleClass('visible-'+(index+1));
+                })
+
+            })
+        })
+    });
+    
+</script>
+</html>
