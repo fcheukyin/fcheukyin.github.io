@@ -17,6 +17,10 @@ nav {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+.nav-logo {
+  max-height: calc(64px * .5);
+  width: auto;
+}
 .dashboard-container {
     border-radius: 1em;
     background: rgb(255,255,255,0.5);
@@ -46,8 +50,44 @@ nav {
     left: calc(1em + 50px);
     font-size: 25px;
 }
+@media (min-width: 966px) {
+  .dashboard-container .title-div {
+    display: none;
+  }
+}
 .dashboard-container .content-div{
     word-wrap: break-word
+}
+.dashboard-container .toggle-title{
+    position: fixed;
+    top: 132px;
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+.dashboard-container .toggle-title.left{
+    transform: translateX(-10px);
+}
+.dashboard-container .toggle-title.right{
+    transform: translateX(10px);
+}
+.dashboard-container .toggle-title:before {
+  position: absolute;
+  content: '';
+  bottom:0;
+  left:0;
+  height:1px;
+  width: 0;
+  border: 1px solid white;
+  transition: all 400ms ease 150ms;
+}
+.dashboard-container .toggle-title.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+.dashboard-container .toggle-title.show:before {
+  width: 100%;
 }
 
 .bottom-right-fab {

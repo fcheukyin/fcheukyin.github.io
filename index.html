@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>馮 卓然 | GitHub Portfolio</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/icon/favicon-16x16.png">
+    <title>馮卓然 | GitHub Portfolio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icon/favicon-16x16.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/materialize.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -17,7 +17,7 @@
         <nav class="transparent">
             <div class="nav-wrapper">
                 <a href="#!" data-target="sidenav" class="sidenav-trigger show-on-large"><span class="material-icons">menu</span></a>
-                <a href="#!" class="brand-logo center">馮卓然</a>
+                <a href="#!" class="brand-logo center"><img class="nav-logo" src="./img/icon/logo.png" alt="馮卓然"/></a>
                 <ul class="right hide-on-med-and-down">
                 <li><a class="nav-link" target-tab="tab1" target-div="myIntro">私について</a></li>
                 <li><a class="nav-link" target-tab="tab1" target-div="myEx">経歴</a></li>
@@ -46,7 +46,7 @@
         <li class="tab"><a href="#tab2">スキル</a></li>
     </ul>
     <div class="container">
-        <div class="row" id="tab1">
+        <div class="row tab-group" id="tab1">
             <div class="col l6 s12 offset-l3">
                 <div class="dashboard-container" id="myIntro">
                     <div class="icon-div amber darken-1">
@@ -61,6 +61,9 @@
                         <span>出身：香港</span>
                         <br>
                         <span>年齢：24</span>
+                    </div>
+                    <div class="toggle-title">
+                        <span>私</span><span>について</span>
                     </div>
                 </div>
                 <br>
@@ -105,7 +108,49 @@
                         <br>
                         <span></span>
                     </div>
+                    <div class="toggle-title">
+                        経歴
+                    </div>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <br>
                 <br>
                 <br>
@@ -136,13 +181,16 @@
                 <br>
             </div>
         </div>
-        <div class="row" id="tab2">
+        <div class="row tab-group" id="tab2">
             <div class="col l6 s12 offset-l3">
                 <div class="dashboard-container" id="mySkill1">
                     <div class="icon-div pink darken-1">
                         <span class="material-icons">person</span>
                     </div>
                     <div class="title-div">
+                        HTML
+                    </div>
+                    <div class="toggle-title">
                         HTML
                     </div>
                 </div>
@@ -164,11 +212,26 @@
 </body>
 <script src="./js/materialize.js"></script>
 <script type="text/javascript">
+    const NAV_OFFSET = 132 + 30;
     $(document).ready(function(){
 
         $('.tabs').tabs();
         $('.modal').modal();
         $('.sidenav').sidenav();
+
+        $('.toggle-title').each(function(index){
+          let width = $(window).width()/2 - $('.container').width()/2;
+          if ((index+1) % 2 != 0) {
+            var pos = 'right';
+          } else {
+            var pos = 'left';
+          }
+          $(this).css(pos, width+'px');
+          $(this).addClass(pos);
+        })
+        $('.tab-group').each(function(){
+          $(this).find('.toggle-title').first().addClass('show');
+        })
 
         $(function(){
             var currentTheme = 'lime';
@@ -183,12 +246,12 @@
             $('.nav-link').click(function(){
                 var targettab = $(this).attr('target-tab');
                 var targetdiv = $(this).attr('target-div')
-                var tabs = document.getElementById('tabs');
-                var instance = M.Tabs.getInstance(tabs);
+                let tabs = document.getElementById('tabs');
+                let instance = M.Tabs.getInstance(tabs);
                 instance.select(targettab);
 
                 $('html,body').animate({
-                    scrollTop: $('#'+targetdiv).offset().top - 132
+                    scrollTop: $('#'+targetdiv).offset().top - NAV_OFFSET
                 }, 1000);
             })
         })
@@ -202,6 +265,29 @@
 
             })
         })
+
+        $(function(){
+          let tabs = document.getElementById('tabs');
+          let instance = M.Tabs.getInstance(tabs);
+          $(document).scroll(function(){
+              let currenttab = getCurrentTab()
+              currenttab.find('.dashboard-container').each(function(){
+              let coordinate = $(this)[0].getBoundingClientRect();
+              let y_co = coordinate.y;
+              if (y_co - NAV_OFFSET ==0 || (NAV_OFFSET - y_co) <=$(this).outerHeight() && (NAV_OFFSET - y_co) >= 0) {
+                $(this).find('.toggle-title').addClass('show');
+              } else {
+                $(this).find('.toggle-title').removeClass('show');
+              }
+            })
+          })
+        })
+
+        function getCurrentTab() {
+          let instance = M.Tabs.getInstance(tabs);
+          let tabindex = instance.index + 1;
+          return $('#tab'+ tabindex);
+        }
     });
 
 </script>
