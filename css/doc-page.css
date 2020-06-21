@@ -1,0 +1,38 @@
+html {
+    scroll-padding-top: 80px;
+}
+body {
+    font-family: 'M PLUS 1p', sans-serif;
+    position: relative;
+}
+.scrollspy-example {
+    position: relative;
+    height: calc(100vh - 56px - 100px);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+.scrollspy-example::-webkit-scrollbar {
+    display: none;
+}
+.cd {
+    background-color: #212529;
+    padding: 5px 10px;
+    border-radius: .4em;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    color: #fff;
+    width: 90%;
+    font-size: .7em;
+}
+.cd span {
+    display: block;
+}
+.cd .output {
+    color: #63E463
+}
+.list-group {
+    scroll-padding-top: 56px;
+}
+.list-group-item.active {
+    background-color: #83c0d7;
+    border-color: #83c0d7
+}
