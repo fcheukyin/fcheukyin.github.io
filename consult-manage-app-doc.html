@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult-manage-app 環境構築手順</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-padding-top: 80px;
+        }
+        body {
+            font-family: 'M PLUS 1p', sans-serif;
+            position: relative;
+        }
+        .scrollspy-example {
+            position: relative;
+            height: calc(100vh - 56px - 100px);
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+        }
+        .scrollspy-example::-webkit-scrollbar {
+            display: none;
+        }
+        .cd {
+            background-color: #212529;
+            padding: 5px 10px;
+            border-radius: .4em;
+            font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+            color: #fff;
+            width: 90%;
+            font-size: .7em;
+        }
+        .cd span {
+            display: block;
+        }
+        .cd .output {
+            color: #63E463
+        }
+        .list-group {
+            scroll-padding-top: 56px;
+        }
+        .list-group-item.active {
+            background-color: #83c0d7;
+            border-color: #83c0d7
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <a class="navbar-brand">
+            <span class="font-weight-bold">CONSULT-MANAGE-APP</span>
+            <span class="font-weight-light">環境構築</span>
+        </a>
+    </nav>
+    <div class="container-fluid p-3">
+        <h4>構築手順</h4>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-lg-8 col-md-8">
+                <div data-spy="scroll" data-target="#list-example" data-offset="120" class="scrollspy-example">
+                    <h3 id="list-item-1">事前インストール</h3>
+                    <div class="p-4">
+                        <h4>Visual Studio Code</h4>
+                        <p>
+                            <a href="https://code.visualstudio.com/Download">ダウンロードURL</a>
+                            <br>
+                            <a href="https://eng-entrance.com/texteditor-vscode">参考手順</a>
+                        </p>
+                        <hr>
+                        <h4>Node JS</h4>
+                        <p>
+                            バーション：<span class="text-warning">12.15.0以上</span>
+                            <br>
+                            <a href="https://nodejs.org/dist/v12.18.1/node-v12.18.1-x64.msi">ダウンロードURL</a>
+                            <br>
+                            インストール完了後、コマンドプロンプトに<kbd>node -v</kbd>を実行
+                            <br>
+                            <br>
+                            確認結果
+                            <br>
+                            <div class="cd">
+                                <span>node -v</span>
+                                <span class="output">v.12.18.1</span>
+                            </div>
+                        </p>
+                        <hr>
+                        <h4>MySQL</h4>
+                        <p>
+                            <a href="https://dev.mysql.com/downloads/installer/">ダウンロードURL</a>
+                            <br>
+                            <a href="https://udemy.benesse.co.jp/development/web/mysql-install.html">参考手順</a>
+                            <br>
+                            ユーザー名: <span class="text-info">root</span>
+                            <br>
+                            パスワード: <span class="text-info">root</span>
+                        </p>
+                        <hr>
+                        <h4>GitHubDesktop</h4>
+                        <p>
+                            <a href="https://desktop.github.com">ダウンロードURL</a>
+                        </p>
+                    </div>
+                    <hr>
+                    <h3 id="list-item-2">リポジトリクローン</h3>
+                    <div class="p-4">
+                        GitHubDesktopをインストール後、起動してログイン
+                        <br>
+                        <br>
+                        File → Clone repository
+                        <br>
+                        <img src="./github_clone.png" class="rounded img-fluid">
+                        <br>
+                        <br>
+                        GitHub.com → filterにfcheukyin/consult-manage-appと入力
+                        <br>
+                        Local path: 任意パス\ワークスペース名\consult-manage-app
+                        <img src="./github_clone_2.png" class="rounded img-fluid">
+                        <br>
+                        Cloneを押下 → 完了
+                    </div>
+                    <hr>
+                    <h3 id="list-item-3">Angular導入</h3>
+                    <div class="p-4">
+                        コマンドプロンプトを開いて以下のコマンドを実行
+                        <div class="cd">
+                            <span>C:/任意パス/ワークスペース/consult-manage-app/angular-app/npm install -g @angular/cli</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 id="list-item-4">フロント用のライブラリ導入</h3>
+                    <div class="p-4">
+                        コマンドプロンプトを開いて以下のパスに移動
+                        <div class="cd">
+                            <span>cd C:/任意パス/ワークスペース/consult-manage-app/angular-app/</span>
+                        </div>
+                        <br>
+                        <br>
+                        コマンドプロンプトを開いて以下のコマンドを実行
+                        <br>
+                        Angular Material
+                        <div class="cd">
+                            <span>ng add @angular/material</span>
+                        </div>
+                        Mat-table-filter
+                        <div class="cd">
+                            <span>npm install –-save mat-table-filter</span>
+                        </div>
+                        jquery
+                        <div class="cd">
+                            <span>npm install –-save jquery</span>
+                        </div>
+                        FullCalendar
+                        <div class="cd">
+                            <span>npm install -–save @fullcalendar/angular @fullcalendar/core @fullcalendar/daygrid @fullcalendar/timegrid</span>
+                        </div>
+                        MomentJS
+                        <div class="cd">
+                            <span>npm install –-save moment</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 id="list-item-5">バック用のライブラリ導入</h3>
+                    <div class="p-4">
+                        コマンドプロンプトを開いて以下のパスに移動
+                        <div class="cd">
+                            <span>cd C:/任意パス/ワークスペース/consult-manage-app/nodejs-mysql-api/</span>
+                        </div>
+                        <br>
+                        <br>
+                        コマンドプロンプトを開いて以下のコマンドを実行
+                        <br>
+                        ExpressJS
+                        <div class="cd">
+                            <span>npm install –-save express</span>
+                            <span>npm install –-save express-jwt</span>
+                            <span>npm install –-save express-handlebars</span>
+                        </div>
+                        Body-parser
+                        <div class="cd">
+                            <span>npm install –-save body-parser</span>
+                        </div>
+                        Crypto
+                        <div class="cd">
+                            <span>npm install –-save crypto</span>
+                        </div>
+                        Jsonwebtoken
+                        <div class="cd">
+                            <span>npm install –-save jsonwebtoken</span>
+                        </div>
+                        Sequelize
+                        <div class="cd">
+                            <span>npm install –-save sequelize</span>
+                        </div>
+                        Cors
+                        <div class="cd">
+                            <span>npm install –-save cors</span>
+                        </div>
+                        eJS
+                        <div class="cd">
+                            <span>npm install –-save ejs</span>
+                        </div>
+                        Path
+                        <div class="cd">
+                            <span>npm install –-save path</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 id="list-item-6">動作確認</h3>
+                    <div class="p-4">
+                        1.	コマンドプロンプトに以下のコマンドを実行
+                        <div class="cd">
+                            <span>cd C:/任意パス/ワークスペース/consult-manage-app/angular-app/</span>
+                            <span>ng serve</span>
+                        </div>
+                        2.	コマンドプロンプトに以下のコマンドを実行
+                        <div class="cd">
+                            <span>cd C:/任意パス/ワークスペース/consult-manage-app/nodejs-mysql-api/</span>
+                            <span>node server.js</span>
+                        </div>
+                        3.　<a href="http://localhost:8080">http://localhost:8080</a>にアクセス
+                        <br>
+                        4.　ログイン画面が表示されること
+                    </div>
+                </div>
+            </div>
+            <div class="col-0 col-md-4 col-lg-4 d-none d-md-block d-lg-block">
+                <div id="list-example" class="list-group sticky-top">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">事前インストール</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">リポジトリクローン</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Angular導入</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">フロント用のライブラリ導入</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-5">バック用のライブラリ導入</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-6">動作確認</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
