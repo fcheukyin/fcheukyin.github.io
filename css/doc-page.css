@@ -36,3 +36,22 @@ body {
     background-color: #83c0d7;
     border-color: #83c0d7
 }
+.screen {
+    width: 300px;
+}
+
+.todo-nav {
+    background: linear-gradient(360deg, #38aecc 10%, #347fb9 360%);
+    color: white;
+}
+
+.custom-bg {
+    background: #c1cbd4;
+}
+
+.footer {
+    height: 50px;
+    color: gray;
+    font-size: .7em;
+    padding: 20px 40px 10px;
+}
