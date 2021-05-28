@@ -49,11 +49,7 @@ nav {
     top: 5px;
     left: calc(1em + 50px);
     font-size: 25px;
-}
-@media (min-width: 966px) {
-  .dashboard-container .title-div {
     display: none;
-  }
 }
 .dashboard-container .content-div{
   word-wrap: break-word
@@ -128,4 +124,13 @@ nav {
 }
 .bottom-right-fab.sub.visible-3{
     transform: translateX(-70px) translateY(-70px);
+}
+.spacer {
+  display: block;
+  height: 1.5em;
+}
+@media (max-width: 965px) {
+  .toggle-title{
+    font-size: 15px;
+  }
 }
