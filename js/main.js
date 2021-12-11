@@ -2,6 +2,9 @@ const NAV_OFFSET = 132 + 30;
 const VIEWPORT_SM = 768;
 const VIEWPORT_MD = 992;
 const VIEWPORT_LG = 1200
+
+var scrolling = false;
+
 $(document).ready(function(){
 
     $('.tabs').tabs();
@@ -67,6 +70,15 @@ $(document).ready(function(){
         })
     })
 
+    $(function autoScrolling(){
+        $(window).mousewheel(function(event) {
+            autoScroll(event);
+        })
+        $('.scroll-down-btn').click(function() {
+            autoScroll({deltaY: -1});
+        })
+    })
+
     $(function bottomFab(){
         $('.bottom-right-fab.main').click(function(){
             $(this).toggleClass('pulse');
@@ -115,6 +127,20 @@ $(document).ready(function(){
         let instance = M.Tabs.getInstance(tabs);
         let tabindex = instance.index + 1;
         return $('#tab'+ tabindex);
+    }
+
+    function autoScroll(event) {
+        if (scrolling) {
+            return;
+        }
+        scrolling = true;
+        var scroll = event.deltaY > 0 ? -window.innerHeight : window.innerHeight;
+        $('html,body').animate({
+            scrollTop: document.documentElement.scrollTop + scroll
+        }, 1000);
+        window.setTimeout(function(){
+            scrolling = false;
+        }, 1000);
     }
 
     function onViewportBreakpoint(width) {

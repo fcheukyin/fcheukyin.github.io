@@ -197,6 +197,15 @@ nav {
   animation: .7s  cubic-bezier(1,.05,.44,.97) forwards fade-out;
 }
 
+.scroll-down-btn {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
 @media (max-width: 965px) {
   .toggle-title{
     font-size: 15px;
