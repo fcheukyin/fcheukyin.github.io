@@ -12,6 +12,28 @@ $(document).ready(function(){
         $(this).find('.toggle-title').first().addClass('show');
     })
 
+    $(function init() {
+        setTimeout(function() {
+            $('.loaded-background').find('.bar').addClass('animation-out');
+        }, 1500);
+        setTimeout(function() {
+            $('.loaded-background').css('border-radius', '50%');
+            $('.loaded-background').css('transform', 'translate(-50%,-50%) scale(1.5)');
+            var vh = $(window).height();
+            var vw = $(window).width();
+            if (vh >= vw) {
+                $('.loaded-background').css('height', vh + 'px');
+                $('.loaded-background').css('width', vh + 'px');
+            } else {
+                $('.loaded-background').css('height', vw + 'px');
+                $('.loaded-background').css('width', vw + 'px');
+            }
+        }, 2300);
+        setTimeout(function() {
+            $('.loaded-background').addClass('loaded-animation');
+        }, 2350);
+    })
+
     $(function theming(){
         var currentTheme = 'lime';
         $('.theme-trigger').click(function(){
