@@ -15,7 +15,7 @@ $(document).ready(function(){
     $(function init() {
         setTimeout(function() {
             $('.loaded-background').find('.bar').addClass('animation-out');
-        }, 1500);
+        }, 1800);
         setTimeout(function() {
             $('.loaded-background').css('border-radius', '50%');
             $('.loaded-background').css('transform', 'translate(-50%,-50%) scale(1.5)');
@@ -28,10 +28,10 @@ $(document).ready(function(){
                 $('.loaded-background').css('height', vw + 'px');
                 $('.loaded-background').css('width', vw + 'px');
             }
-        }, 2300);
+        }, 2600);
         setTimeout(function() {
             $('.loaded-background').addClass('loaded-animation');
-        }, 2350);
+        }, 2650);
     })
 
     $(function theming(){

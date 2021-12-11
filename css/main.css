@@ -165,9 +165,9 @@ nav {
   align-items: center;
   right:0;
   bottom: 40%;
-  height: 90px;
-  width: 500px;
-  padding-left: 15px;
+  height: 120px;
+  width: 700px;
+  padding-left: 30px;
 }
 .bar::after {
   content: '';
@@ -184,16 +184,17 @@ nav {
 }
 .bar span {
   position: absolute;
+  font-family: 'Readex Pro', sans-serif;
   font-weight: bolder;
   font-size: 50px;
   color: black;
   opacity: 0;
   z-index: 1;
-  animation: .5s  cubic-bezier(1,.05,.44,.97) .2s forwards fade-in;
+  animation: 1s  cubic-bezier(1,.05,.44,.97) .2s forwards fade-in;
 }
 .animation-out span {
   opacity: 1;
-  animation: .6s  cubic-bezier(1,.05,.44,.97) forwards fade-out;
+  animation: .7s  cubic-bezier(1,.05,.44,.97) forwards fade-out;
 }
 
 @media (max-width: 965px) {
