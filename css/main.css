@@ -202,11 +202,12 @@ nav {
     font-size: 15px;
   }
   .bar {
+    justify-content: center;
     width: 100vw;
     height: 70px;
   }
   .bar span {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
