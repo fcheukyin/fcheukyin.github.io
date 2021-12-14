@@ -12,8 +12,6 @@ body {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(180deg, rgb(191, 109, 221) 0%, rgb(245, 213, 255) 100%, rgba(0,212,255,1) 100%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 .navbar-fixed {
   position: fixed;
