@@ -224,6 +224,9 @@ nav {
 }
 
 @media (max-width: 965px) {
+  .section-wrapper {
+    padding-top: 70px
+  }
   .toggle-title{
     font-size: 15px;
   }
