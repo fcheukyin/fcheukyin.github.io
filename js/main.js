@@ -7,13 +7,10 @@ var scrolling = false;
 
 $(document).ready(function(){
 
-    $('.tabs').tabs();
     $('.modal').modal();
     $('.sidenav').sidenav();
     setToggleTitlePos();
-    $('.tab-group').each(function(){
-        $(this).find('.toggle-title').first().addClass('show');
-    })
+    $(this).find('.toggle-title').first().addClass('show');
 
     $(function init() {
         setTimeout(function() {
@@ -90,11 +87,8 @@ $(document).ready(function(){
     })
 
     $(function toggleTitle(){
-        let tabs = document.getElementById('tabs');
-        let instance = M.Tabs.getInstance(tabs);
         $(document).scroll(function(){
-            let currenttab = getCurrentTab()
-            currenttab.find('.dashboard-container').each(function(){
+            $('.dashboard-container').each(function(){
             let coordinate = $(this)[0].getBoundingClientRect();
             let y_co = coordinate.y;
             if (y_co - NAV_OFFSET ==0 || (NAV_OFFSET - y_co) <=$(this).outerHeight() && (NAV_OFFSET - y_co) >= 0) {
@@ -122,11 +116,6 @@ $(document).ready(function(){
         $(this).css(pos, width+'px');
         $(this).addClass(pos);
         })
-    }
-    function getCurrentTab() {
-        let instance = M.Tabs.getInstance(tabs);
-        let tabindex = instance.index + 1;
-        return $('#tab'+ tabindex);
     }
 
     function autoScroll(event) {
