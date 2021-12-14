@@ -6,6 +6,7 @@ html {
     height: 0;
 }
 body {
+    background: linear-gradient(180deg, rgba(191,109,221,1) 0%, rgba(245,213,255,1) 100%, rgba(0,212,255,1) 100%);
     margin: 0;
 }
 .navbar-fixed {
