@@ -124,6 +124,7 @@ $(document).ready(function(){
         }
         scrolling = true;
         var scroll = event.deltaY > 0 ? -window.innerHeight : window.innerHeight;
+        jQuery.easing.def = 'easeInOutQuint';
         $('html,body').animate({
             scrollTop: document.documentElement.scrollTop + scroll
         }, 1000);
