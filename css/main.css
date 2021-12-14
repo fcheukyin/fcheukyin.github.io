@@ -7,6 +7,8 @@ html {
 }
 body {
     background: linear-gradient(180deg, rgba(191,109,221,1) 0%, rgba(245,213,255,1) 100%, rgba(0,212,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
 }
 .navbar-fixed {
@@ -128,17 +130,6 @@ nav {
 .spacer {
   display: block;
   height: 1.5em;
-}
-
-.background {
-  position: fixed;
-  z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-}
-.home-background {
-  background: linear-gradient(180deg, rgba(191,109,221,1) 0%, rgba(245,213,255,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 .loaded-background {
