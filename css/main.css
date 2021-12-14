@@ -43,11 +43,34 @@ nav {
 }
 
 .content-wrapper {
+  position: absolute;
   height: 600vh;
+  width: 100%;
 }
 .section-wrapper {
+  position: absolute;
   height: calc(100%/6);
+  width: 100%;
 }
+.section-wrapper.w1 {
+  top: calc(100%/6*0);
+}
+.section-wrapper.w2 {
+  top: calc(100%/6*1);
+ }
+.section-wrapper.w3 {
+  top: calc(100%/6*2);
+}
+.section-wrapper.w4 {
+  top: calc(100%/6*3);
+}
+.section-wrapper.w5 {
+ top: calc(100%/6*4);
+}
+.section-wrapper.w6 {
+  top: calc(100%/6*5);
+ }
+
 .dashboard-container {
   position: relative;
   top: 20%;
