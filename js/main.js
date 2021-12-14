@@ -1,4 +1,4 @@
-const NAV_OFFSET = 132 + 30;
+const NAV_OFFSET = 200;
 const VIEWPORT_SM = 768;
 const VIEWPORT_MD = 992;
 const VIEWPORT_LG = 1200
